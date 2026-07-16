@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+color:#1d1d1f;
+
+}
+
+/* ---------- Intro ---------- */
+
+#intro{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transition:opacity .9s ease;
+
+}
+
+#intro h1{
+
+font-size:46px;
+font-weight:700;
+letter-spacing:-.03em;
+
+}
+
+#intro p{
+
+margin-top:16px;
+font-size:17px;
+color:#8E8E93;
+
+}
+
+/* ---------- Main ---------- */
+
+#main{
+
+display:none;
+opacity:0;
+
+transition:opacity 1.5s ease;
+
+padding:30px 22px 60px;
+
+max-width:520px;
+margin:auto;
+
+}
+
+/* ---------- Photo ---------- */
+
+.photo{
+
+overflow:hidden;
+border-radius:28px;
+
+box-shadow:
+0 12px 40px rgba(0,0,0,.12),
+0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.photo img{
+
+width:100%;
+display:block;
+
+transform:scale(1.03);
+opacity:0;
+
+transition:
+
+transform 2.4s cubic-bezier(.22,1,.36,1),
+
+opacity 2s ease;
+
+}
+
+/* ---------- Text ---------- */
+
+.text{
+
+margin-top:42px;
+
+opacity:0;
+
+transform:translateY(18px);
+
+transition:
+
+opacity 1.6s ease,
+
+transform 1.6s ease;
+
+}
+
+.text h2{
+
+font-size:34px;
+text-align:center;
+letter-spacing:-.02em;
+margin-bottom:26px;
+
+}
+
+.text p{
+
+font-size:19px;
+
+line-height:1.95;
+
+text-align:center;
+
+color:#424245;
+
+}
+
+.footer{
+
+margin-top:46px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#A1A1A6;
+
+}
+
+/* ---------- Animation Classes ---------- */
+
+.show{
+
+opacity:1 !important;
+
+}
+
+.zoom{
+
+transform:scale(1) !important;
+
+}
+
+.move{
+
+opacity:1 !important;
+transform:translateY(0) !important;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section id="intro">
+
+<h1>🎂 Happy Birthday</h1>
+
+<p>A little surprise for you.</p>
+
+</section>
+
+<section id="main">
+
+<div class="photo">
+
+<img
+id="photo"
+src="IMG_6223.jpeg"
+alt="">
+
+</div>
+
+<div
+class="text"
+id="text">
+
+<h2>Happy Birthday! 🎉</h2>
+
+<p>
+
+Có những người cùng mình đi qua một quãng thanh xuân,
+vậy là đủ để mỉm cười mỗi khi nhớ lại.
+
+<br><br>
+
+Chúc mừng sinh nhật! 🎂
+
+<br><br>
+
+Chúc Minh Hằng luôn hạnh phúc
+và gặp thật nhiều điều tốt đẹp
+trên chặng đường phía trước.
+
+</p>
+
+<div class="footer">
+
+Made with ❤️
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const intro=document.getElementById("intro");
+
+const main=document.getElementById("main");
+
+const photo=document.getElementById("photo");
+
+const text=document.getElementById("text");
+
+setTimeout(()=>{
+
+intro.style.opacity="0";
+
+setTimeout(()=>{
+
+intro.style.display="none";
+
+main.style.display="block";
+
+requestAnimationFrame(()=>{
+
+main.classList.add("show");
+
+});
+
+setTimeout(()=>{
+
+photo.classList.add("show");
+
+photo.classList.add("zoom");
+
+},250);
+
+setTimeout(()=>{
+
+text.classList.add("move");
+
+},950);
+
+},900);
+
+},2000);
+
+</script>
+
+</body>
+
+</html>
